@@ -8,7 +8,7 @@ const flash = require ('connect-flash');
 const session = require ('express-session');
 const passport = require('passport');
 require("./config/passport")(passport)
-//mongoose 
+//mongoose
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser:true, useUnifiedTopology: true})
 .then(() => console.log('connected,,'))
 .catch((err) => console.log(err));
@@ -38,7 +38,9 @@ next();
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 //listen for request
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Server is listening to the port 3000');
+});
 
 app.get('/', (req,res) =>{
     res.render('homepage', {title: 'MyShop'})

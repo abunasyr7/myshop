@@ -30,8 +30,8 @@ router.post('/register',(req,res)=>{
     if (errors. length > 0){
         res.render('register', {
             errors: errors,
-            name: name, 
-            email: email, 
+            name: name,
+            email: email,
             password : password,
             password2 : password2})
     } else {
@@ -42,13 +42,12 @@ router.post('/register',(req,res)=>{
                 errors.push({msg: 'email already registred'});
                 render(res, errors, name, email, password, password2);
             } else{
-                const newUser = newUser 
-                ({
-                    name : name, 
+                const newUser = new User({
+                    name : name,
                     email : email,
                     password : password
                 });
-                bcrypt.genSalt(10,(err,salt)=> 
+                bcrypt.genSalt(10,(err,salt)=>
                 bcrypt.hash(newUser.password,salt,
                     (err,hash)=> {
                         if(err) throw err;
@@ -79,6 +78,6 @@ router.post('/login',(req,res,next)=>{
 
 //logout
 router.get('/logout',(req,res)=>{
-    
+
  })
 module.exports  = router;
