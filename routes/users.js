@@ -3,6 +3,7 @@ const express = require('express');
 const { render } = require("ejs");
 const router = express.Router();
 const bcrypt = require ('bcrypt');
+const passport = require('passport');
 
 //login handle
 router.get('/login',(req,res)=>{
