@@ -1,4 +1,6 @@
+<%- include('./partials/head.ejs') %>
 <h1> Login </h1>
+<%- include('./partials/nav.ejs') %>
 <%- include ('./partials/messages') %>
 <form action="/users/login" method="POST">
 <div>
@@ -21,3 +23,4 @@ placeholder="Enter Email"
 <button type="submit" class="btn btn-primary btn-block">Login</button>
    
 </form>
+<%- include('./partials/footer.ejs') %>

@@ -1,4 +1,6 @@
+<%- include ('./partials/head', {title: title}) ; %>
 <h1>Register</h1>
+<%- include('./partials/nav.ejs') %>
 <%- include ('./partials/messages') %>
 <form action="/users/register" method="POST">
 <div>
@@ -43,3 +45,4 @@
   </button>
 </form>
 <p >Have An Account? <a href="/users/login">Login</a></p>
+<%- include('./partials/footer.ejs') %>

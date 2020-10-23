@@ -50,7 +50,9 @@ app.get('/about',(req, res) =>{
     res.render('about',{title: 'About'});
 });
 
-
+app.get('/welcome',(req, res) =>{
+    res.render('welcome',{title: 'Welcome'});
+});
 
 app.get('/contact',(req, res) =>{
     res.render('contact',{title: 'Contacts'});

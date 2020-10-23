@@ -4,14 +4,14 @@ const { render } = require("ejs");
 const router = express.Router();
 const bcrypt = require ('bcrypt');
 const passport = require('passport');
+const title = 'test'
 
 //login handle
 router.get('/login',(req,res)=>{
     res.render('login');
 })
 router.get('/register',(req,res)=>{
-    res.render('register')
-    })
+    res.render('register', {title: title});})
 //Register handle
 router.post('/register',(req,res)=>{
     const {name, email, password, password2} = req.body;
@@ -30,6 +30,7 @@ router.post('/register',(req,res)=>{
     }
     if (errors. length > 0){
         res.render('register', {
+            title: title,
             errors: errors,
             name: name,
             email: email,
