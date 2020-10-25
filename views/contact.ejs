@@ -1,20 +1,34 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-</head>
+  <%- include('./partials/head.ejs') %>
 <body>
-  <div class="col-lg-3">
-    <style>.redcolor{color: crimson;} </style>
-    <h1 class="my-4">AMiGO</h1>
-    <div class="list-group">
-      <a href="#" class="list-group-item redcolor">Толстовки</a>
-      <a href="#" class="list-group-item">Спортивные костюмы</a>
-      <a href="#" class="list-group-item">Бомберы</a>
+  <%- include('./partials/nav.ejs') %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <style>.redcolor{color: crimson;} </style>
+          <h1 class="my-4">AMiGO</h1>
+          <div class="list-group">
+            <% const categories = [
+              'Толстовки',
+              'Спортивные костюмы',
+              'Бомберы',
+              'Трико',
+              'Штаны'
+              ] %>
+              <% for (let i = 0; i < categories.length; i++) { %>
+              <a href="#" class="list-group-item"><%= categories[i] %></a>
+              <% } %>
+              <% for (let i = 0; i < categories.length; i++) { %>
+              <a href="#" class="list-group-item"><%= categories[i] %></a>
+              <% } %>
+          </div>
+        </div>
+          <div class="col-lg-9">
+            <h1>Обратная связь</h1>
+            <h2>Для наших постоянных клиентов мы проводим различные акции</h2>
+          </div>
+      </div>
     </div>
-  </div>
-    <h1>Обратная связь</h1>
-    <h2>Для наших постоянных клиентов мы проводим различные акции</h2>
+    <%- include('./partials/footer.ejs') %>
   </body>
   </html>

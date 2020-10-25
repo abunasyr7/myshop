@@ -1,17 +1,19 @@
 <%- include('./partials/head.ejs') %>
-<h1> Login </h1>
+
 <%- include('./partials/nav.ejs') %>
 <%- include ('./partials/messages') %>
-<form action="/users/login" method="POST">
-<div>
-<label for="email">Email</label>
-<input
-type="email"
-name="email"
-placeholder="Enter Email"
-/>
-</div>
-<div>
+<div class="container">
+  <h1> Login </h1>
+  <form action="/users/login" method="POST">
+  <div>
+  <label for="email">Email</label>
+  <input
+  type="email"
+  name="email"
+  placeholder="Enter Email"
+  />
+  </div>
+  <div>
     <label for="password">Password</label>
     <input
       type="password"
@@ -19,8 +21,9 @@ placeholder="Enter Email"
       placeholder="Enter Password"
     />
   
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Login</button>
+
+  </form>
 </div>
-<button type="submit" class="btn btn-primary btn-block">Login</button>
-   
-</form>
 <%- include('./partials/footer.ejs') %>

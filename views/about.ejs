@@ -2,28 +2,37 @@
   <%- include('./partials/head.ejs') %>
 
 <body>
-  <%- include('./partials/nav.ejs') %>
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-3">
-        <style>.redcolor{color: crimson;} </style>
-        <h1 class="my-4">AMiGO</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item redcolor">Толстовки</a>
-          <a href="#" class="list-group-item">Спортивные костюмы</a>
-          <a href="#" class="list-group-item">Бомберы</a>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+            <style>.redcolor{color: crimson;} </style>
+            <h1 class="my-4">AMiGO</h1>
+            <div class="list-group">
+              <% const categories = [
+                'Толстовки',
+                'Спортивные костюмы',
+                'Бомберы',
+                'Трико',
+                'Штаны'
+              ] %>
+              <% for (let i = 0; i < categories.length; i++) { %>
+              <a href="#" class="list-group-item"><%= categories[i] %></a>
+              <% } %>
+              <% for (let i = 0; i < categories.length; i++) { %>
+              <a href="#" class="list-group-item"><%= categories[i] %></a>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <h1>About</h1>
+            <h2>Лучшие вещи, которые только можно представить</h2>
+          </div>
         </div>
       </div>
-      <div class="col-lg-9">
-        <h1>About</h1>
-        <h2>Лучшие вещи, которые только можно представить</h2>
-      </div>
+      <%- include('./partials/footer.ejs') %>
     </div>
-
-  </div>
-  <%- include('./partials/footer.ejs') %>
+  
 </body>
 
 </html>
