@@ -38,7 +38,7 @@ next();
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 //listen for request
-app.listen(80, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server is listening to the port 3000');
 });
 
